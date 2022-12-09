@@ -45,3 +45,21 @@
     cursor: pointer;
     font-weight: 500;
 }
+
+.headerListItem.btn{
+    display: flex;
+    align-items: flex-end;
+}
+
+.navBtn {
+    display: flex;
+    border: none;
+    background-color: transparent;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 20px;
+}
