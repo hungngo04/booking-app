@@ -8,7 +8,7 @@ import { useState } from 'react';
 import { format } from 'date-fns';
 import './header.css'
 
-const Header = () => {
+const Header = ({type}) => {
     const [date, setDate] = useState([
         {
             startDate: new Date(),
@@ -37,7 +37,7 @@ const Header = () => {
     
     return (
         <div className='header'>
-            <div className="headerContainer">
+            <div className={type === "list" ? "headerContainer listMode" : "headerContainer"}>
                 <div className="headerList">
                     <div className="headerListItem active">
                         <FontAwesomeIcon icon={faBed} />
@@ -70,6 +70,8 @@ const Header = () => {
                         </button>
                     </div>
                 </div>
+                { type !== "list" &&
+                <>
                 <h1 className="headerTitle">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h1>
                 <p className="headerDesc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, repudiandae. Iusto odio incidunt nihil labore qui fugit natus dolorem accusamus reprehenderit ex aperiam omnis quaerat dolorum, molestias animi magni nobis!</p>
                 <button className="headerBtn">Sign in / Register</button>
@@ -142,7 +144,7 @@ const Header = () => {
                     <div className="headerSearchItem">
                         <button className="headerBtn">Search</button>
                     </div>
-                </div>
+                </div> </>}
             </div>
         </div>
     )
