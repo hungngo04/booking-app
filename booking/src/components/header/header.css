@@ -99,3 +99,46 @@
     color: lightgray;
     cursor: pointer;
 }
+
+.date {
+    position: absolute;
+    top: 50px;
+}
+
+.options {
+    position: absolute;
+    background-color: white;
+    color: gray;
+    border-radius: 5px;
+    top: 50px;
+    box-shadow: 0px 5px 5px 0px rgba(224,224,224,0.75);
+    -webkit-box-shadow: 0px 5px 5px 0px rgba(224,224,224,0.75);
+    -moz-box-shadow: 0px 5px 5px 0px rgba(224,224,224,0.75);
+}
+
+.optionItem {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.optionCounter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+}
+
+.optionCounterButton {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #0071c2;
+    color: #0071c2;
+    cursor: pointer;
+    background-color: white;
+}
+
+.optionCounterButton:disabled {
+    cursor: not-allowed;
+}
