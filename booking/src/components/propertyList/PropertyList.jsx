@@ -32,6 +32,13 @@ export const PropertyList = () => {
                 <h2>477,177 villas</h2>
             </div>
         </div>
+        <div className="pListItem">
+            <img src="https://r-xx.bstatic.com/xdata/images/hotel/300x240/52979454.jpeg?k=6ac6d0afd28e4ce00a8f817cc3045039e064469a3f9a88059706c0b45adf2e7d&o=" alt="hotels" />
+            <div className="pListTitle">
+                <h1>Cabins</h1>
+                <h2>37,253 cabins</h2>
+            </div>
+        </div>
     </div>
   )
 }
