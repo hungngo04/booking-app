@@ -70,6 +70,13 @@ const Header = ({type}) => {
                         </button>
                     </div>
                 </div>
+                { type == "list" && 
+                    <>
+                        <div className="resultText">
+                            <h1>Search results</h1>
+                        </div>
+                    </>
+                }
                 { type !== "list" &&
                 <>
                 <h1 className="headerTitle">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h1>

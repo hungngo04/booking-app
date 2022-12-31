@@ -17,7 +17,8 @@
 }
 
 .headerContainer.listMode {
-    margin: 20px 0px 0px 0px;
+    margin: 10px 0px 0px 0px;
+    height: 200px;
 }
 
 .headerList {
@@ -147,4 +148,9 @@
 
 .optionCounterButton:disabled {
     cursor: not-allowed;
+}
+
+.resultText {
+    text-align: center;
+    margin-top: 50px;
 }
