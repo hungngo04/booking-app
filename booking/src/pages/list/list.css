@@ -47,6 +47,15 @@
     padding: 5px;
 }
 
+.lsItem > span {
+    height: 30px;;
+    background-color: white;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
 .lsItemOption {
     display: flex;
     flex-direction: row;

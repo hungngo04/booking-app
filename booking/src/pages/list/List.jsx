@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '../../components/header/Header'
+import { format } from 'date-fns';
+import { DateRange } from 'react-date-range';
 import './list.css'
+import {useLocation} from 'react-router-dom'
 
 const List = () => {
+  const location = useLocation();
+  const [destination, setDestination] = useState(location.state.destination);
+  const [date, setDate] = useState(location.state.date);
+  const [openDate, setOpenDate] = useState(false);
+  const [options, setOptions] = useState(location.state.options);
+
   return (
     <div>
       <Header type="list"></Header>
@@ -12,34 +21,40 @@ const List = () => {
             <h1 className="lsTitle">Search</h1>
             <div className="lsItem">
               <label htmlFor="">Destination</label>
-              <input type="text" placeholder='Madrid'/>
+              <input type="text" placeholder={destination}/>
             </div>
             <div className="lsItem">
               <label htmlFor="">Check-in date</label>
-              <input type="date" placeholder='Madrid'/>
+              <span onClick={() => setOpenDate(!openDate)}>{`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(date[0].endDate, "MM/dd/yyyy")}`}</span>
+              {openDate && <DateRange
+                onChange={(item) => setDate([item.selection])}
+                ranges={date}
+                minDate={new Date()}
+              />
+              }
             </div>
             <div className="lsItem">
               <label htmlFor="">Options</label>
               <div className="lsItemOptions">
                 <div className="lsItemOption">
                   <label htmlFor="">Min price (per night)</label>
-                  <input type="text" />
+                  <input type="number" />
                 </div> 
                 <div className="lsItemOption">
                   <label htmlFor="">Max price (per night)</label>
-                  <input type="text" />
+                  <input type="number" />
                 </div>
                 <div className="lsItemOption">
                   <label htmlFor="">Adult</label>
-                  <input type="text" placeholder='1'/>
+                  <input type="number" placeholder='1'/>
                 </div>
                 <div className="lsItemOption">
                   <label htmlFor="">Children</label>
-                  <input type="text" placeholder='2'/>
+                  <input type="number" placeholder='2'/>
                 </div>
                 <div className="lsItemOption">
                   <label htmlFor="">Room</label>
-                  <input type="text" placeholder='1'/>
+                  <input type="number" placeholder='1'/>
                 </div>
               </div>
             </div>
