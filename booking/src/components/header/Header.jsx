@@ -79,7 +79,7 @@ const Header = ({type}) => {
                 { type == "list" && 
                     <>
                         <div className="resultText">
-                            <h1>Search results</h1>
+                            <h1>Find your rentals</h1>
                         </div>
                     </>
                 }
